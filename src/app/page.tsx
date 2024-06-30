@@ -36,10 +36,10 @@ export default function Chat() {
           onChange={handleInputChange}
         />
       </form>
-      <div className="flex flex-col bg-white w-full border-2 rounded-3xl min-h-screen border-black px-12 py-6 mt-12">
+      <div className="flex flex-col bg-white md:w-full border-2 rounded-3xl min-h-screen border-black px-12 py-6 mt-12">
         <h1 className="text-center text-lg font-semibold uppercase mb-4 underline">Output</h1>
         {messages.map((m) => (
-          <div key={m.id} className="mt-4">
+          <div key={m.id} className="mt-4 whitespace-pre-wrap">
             {m.role === "user" ? (
               <>
                 <strong>User: </strong>
@@ -50,7 +50,7 @@ export default function Chat() {
               <>
                 <strong>DevEye AI: </strong>
                 <br />
-                <ReactMarkdown className="text-blue-600">
+                <ReactMarkdown className="whitespace-pre-wrap overflow-auto text-blue-600 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
                   {m.content}
                 </ReactMarkdown>
               </>
