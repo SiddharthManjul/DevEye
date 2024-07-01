@@ -26,11 +26,11 @@ export default function Chat() {
 
   return (
     <div className="bg-emerald-300 p-12 h-full">
-      <h1 className="text-center text-2xl font-semibold uppercase underline">DevEye AI</h1>
-      <p className="text-center mb-4">An App that generates Codes and Docs</p>
+      <h1 className="text-center text-2xl font-semibold uppercase underline text-black">DevEye AI</h1>
+      <p className="text-center mb-4 text-black">An App that generates Codes and Docs</p>
       <form onSubmit={handleSubmit} className="">
         <input
-          className="border-2 border-black rounded-3xl justify-center w-full h-8 p-12"
+          className="border-2 border-black rounded-3xl justify-center w-full h-8 p-12 text-black"
           value={input}
           placeholder="Message DevEye AI..."
           onChange={handleInputChange}
@@ -42,13 +42,13 @@ export default function Chat() {
           <div key={m.id} className="mt-4 whitespace-pre-wrap">
             {m.role === "user" ? (
               <>
-                <strong>User: </strong>
+                <strong className="text-black">User: </strong>
                 <br />
-                <span className="">{m.content}</span>
+                <span className="text-black">{m.content}</span>
               </>
             ) : (
               <>
-                <strong>DevEye AI: </strong>
+                <strong className="text-black">DevEye AI: </strong>
                 <br />
                 <ReactMarkdown className="whitespace-pre-wrap overflow-auto text-blue-600 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl">
                   {m.content}
